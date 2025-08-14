@@ -14,11 +14,10 @@ connectDB();
 connectCloudinary();
 
 //middlewares
-app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
-    credentials: true,  // Menambahkan pengaturan untuk menerima cookies
+    origin: "*",  // Mengizinkan semua origin
+    credentials: true,
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
